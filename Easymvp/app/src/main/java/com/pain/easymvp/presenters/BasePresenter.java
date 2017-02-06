@@ -5,5 +5,5 @@ package com.pain.easymvp.presenters;
  * 所有Presenter的父接口
  */
 
-public interface BasePresenters {
+public interface BasePresenter {
 }
