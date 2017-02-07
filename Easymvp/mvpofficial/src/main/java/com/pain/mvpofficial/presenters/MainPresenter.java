@@ -21,10 +21,10 @@ public class MainPresenter extends BasePresenterImpl<MainView>{
     }
 
     @Override
-    public void attachView() {
-        //初始化的业务逻辑操作
+    public void initView() {
 
     }
+
     public void loadData(){
         //模拟网络耗时操作
         view.showProgress();
