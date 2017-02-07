@@ -2,8 +2,12 @@ package com.pain.mvpofficial.presenters;
 
 /**
  * Created by zhangty on 2017/2/7.
+ * 所有Presenter的基类
  */
 
 public interface BasePresenter {
-    void start();
+    //此方法为activity初始化时需要进行的业务操作的方法
+    void attachView();
+    //此方法为activity解绑View和Presenter的关系
+    void detachView();
 }

@@ -1,7 +1,6 @@
 package com.pain.mvpofficial.presenters;
-
-import com.pain.mvpofficial.contracts.MainContract;
 import com.pain.mvpofficial.models.MainModel;
+import com.pain.mvpofficial.views.MainView;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -13,23 +12,21 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by zhangty on 2017/2/7.
+ * 列举了一个MainPresent作为样例
  */
 
-public class MainPresenter implements MainContract.Presenter {
-    private MainContract.View view;
-
-    public MainPresenter(MainContract.View view) {
-        this.view = view;
-        view.setPresent(this);
+public class MainPresenter extends BasePresenterImpl<MainView>{
+    public MainPresenter(MainView view) {
+        super(view);
     }
 
     @Override
-    public void start() {
+    public void attachView() {
+        //初始化的业务逻辑操作
 
     }
-
-    @Override
-    public void loadData() {
+    public void loadData(){
+        //模拟网络耗时操作
         view.showProgress();
         Observable.interval(5, TimeUnit.SECONDS)
                 .take(1)
@@ -53,6 +50,5 @@ public class MainPresenter implements MainContract.Presenter {
                         view.showData(mainModel);
                     }
                 });
-
     }
 }
