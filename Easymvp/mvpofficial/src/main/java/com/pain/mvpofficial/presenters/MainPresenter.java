@@ -20,11 +20,6 @@ public class MainPresenter extends BasePresenterImpl<MainView>{
         super(view);
     }
 
-    @Override
-    public void initView() {
-
-    }
-
     public void loadData(){
         //模拟网络耗时操作
         view.showProgress();
@@ -50,5 +45,10 @@ public class MainPresenter extends BasePresenterImpl<MainView>{
                         view.showData(mainModel);
                     }
                 });
+    }
+
+    @Override
+    public void initMvpView() {
+
     }
 }

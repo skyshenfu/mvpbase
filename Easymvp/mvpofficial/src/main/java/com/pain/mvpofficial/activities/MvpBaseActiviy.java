@@ -5,8 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.pain.mvpofficial.presenters.BasePresenter;
-
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -29,7 +27,7 @@ public abstract class MvpBaseActiviy<P extends BasePresenter> extends AppCompatA
         super.onDestroy();
         if (presenter!=null){
             //先解绑Presenter和View的耦合关系
-            presenter.detachView();
+            presenter.detachMvpView();
             //再直接让Presenter为null
             presenter=null;
         }

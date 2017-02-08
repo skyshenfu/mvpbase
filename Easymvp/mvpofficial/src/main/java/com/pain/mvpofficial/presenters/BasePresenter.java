@@ -7,8 +7,8 @@ package com.pain.mvpofficial.presenters;
 
 public interface BasePresenter {
     //此方法为activity初始化时需要进行的业务操作的方法
-    void attachView();
-    void initView();
+    void attachMvpView();
+    void initMvpView();
     //此方法为activity解绑View和Presenter的关系
-    void detachView();
+    void detachMvpView();
 }

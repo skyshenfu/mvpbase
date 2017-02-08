@@ -17,15 +17,16 @@ import java.lang.ref.WeakReference;
     }
 
     @Override
-    public void attachView() {
+    public void attachMvpView() {
         viewRef = new WeakReference<>(view);
     }
 
     @Override
-    public void detachView() {
+    public void detachMvpView() {
         if (viewRef !=null){
             viewRef.clear();
             view=null;
         }
     }
+
 }
